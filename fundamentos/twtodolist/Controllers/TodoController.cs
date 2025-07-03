@@ -51,4 +51,18 @@ public class TodoController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Edit(int id)
+    {
+        var todo = _context.Todos.Find(id);
+        if (todo is null)
+        {
+            return NotFound();
+        }
+
+        var viewModel = new EditTodoViewModel { Title = todo.Title, Date = todo.Date };
+
+        ViewData["Title"] = "Editar Tarefa";
+        return View(viewModel);
+    }
 }
