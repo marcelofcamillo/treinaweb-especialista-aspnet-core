@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using twtodolist.Contexts;
+using twtodolist.Models;
+using twtodolist.ViewModels;
 
 namespace twtodolist.Controllers;
 
@@ -36,7 +38,17 @@ public class TodoController : Controller
 
     public IActionResult Create()
     {
-        ViewData["Title"] = "Criar Tarefa";
+        ViewData["Title"] = "Cadastrar Tarefa";
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(CreateTodoViewModel data)
+    {
+        var todo = new Todo(data.Title, data.Date);
+        _context.Add(todo);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
     }
 }
