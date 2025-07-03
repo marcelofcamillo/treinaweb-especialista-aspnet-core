@@ -65,4 +65,20 @@ public class TodoController : Controller
         ViewData["Title"] = "Editar Tarefa";
         return View(viewModel);
     }
+
+    [HttpPost]
+    public IActionResult Edit(int id, EditTodoViewModel data)
+    {
+        var todo = _context.Todos.Find(id);
+        if (todo is null)
+        {
+            return NotFound();
+        }
+
+        todo.Title = data.Title;
+        todo.Date = data.Date;
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
 }
