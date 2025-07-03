@@ -33,4 +33,10 @@ public class TodoController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Create()
+    {
+        ViewData["Title"] = "Criar Tarefa";
+        return View();
+    }
 }
