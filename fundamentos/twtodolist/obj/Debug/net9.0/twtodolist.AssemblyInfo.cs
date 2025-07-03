@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("twtodolist")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2344b6e0dd0ccf8ae96f1771130ab541706a26f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c25c0b5e1064d1ef75c4678466f397fc270e3e3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("twtodolist")]
 [assembly: System.Reflection.AssemblyTitleAttribute("twtodolist")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
